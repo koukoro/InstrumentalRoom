@@ -1,3 +1,21 @@
+<script setup>
+import { ref } from 'vue'
+import ProductCard from '@/components/ui/ProductCard.vue'
+
+defineProps({
+  title: { type: String, required: true },
+  products: { type: Array, required: true }
+})
+
+const sliderRef = ref(null)
+
+function scroll(dir) {
+  if (sliderRef.value) {
+    sliderRef.value.scrollBy({ left: dir * 300, behavior: 'smooth' })
+  }
+}
+</script>
+
 <template>
   <section class="product-section">
     <div class="product-section__head">
@@ -25,24 +43,6 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import ProductCard from '@/components/ui/ProductCard.vue'
-
-defineProps({
-  title: { type: String, required: true },
-  products: { type: Array, required: true }
-})
-
-const sliderRef = ref(null)
-
-function scroll(dir) {
-  if (sliderRef.value) {
-    sliderRef.value.scrollBy({ left: dir * 300, behavior: 'smooth' })
-  }
-}
-</script>
 
 <style scoped>
 .product-section {

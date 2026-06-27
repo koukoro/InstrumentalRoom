@@ -1,3 +1,32 @@
+<script setup>
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useCartStore } from '@/stores/cart.js'
+import data from '@/data/products.json'
+import ProductCard from '@/components/ui/ProductCard.vue'
+
+const route = useRoute()
+const cart = useCartStore()
+
+const imgError = ref(false)
+const liked = ref(false)
+const addedToCart = ref(false)
+
+const product = computed(() => data.products.find(p => p.slug === route.params.slug))
+
+const relatedProducts = computed(() => {
+  if (!product.value) return []
+  return data.products.filter(p => p.categoryId === product.value.categoryId && p.id !== product.value.id).slice(0, 4)
+})
+
+function handleAddToCart() {
+  if (!product.value) return
+  cart.addToCart(product.value)
+  addedToCart.value = true
+  setTimeout(() => { addedToCart.value = false }, 2000)
+}
+</script>
+
 <template>
   <div class="product-page" v-if="product">
     <div class="container">
@@ -105,35 +134,6 @@
     Товар не найден
   </div>
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
-import { useCartStore } from '@/stores/cart.js'
-import data from '@/data/products.json'
-import ProductCard from '@/components/ui/ProductCard.vue'
-
-const route = useRoute()
-const cart = useCartStore()
-
-const imgError = ref(false)
-const liked = ref(false)
-const addedToCart = ref(false)
-
-const product = computed(() => data.products.find(p => p.slug === route.params.slug))
-
-const relatedProducts = computed(() => {
-  if (!product.value) return []
-  return data.products.filter(p => p.categoryId === product.value.categoryId && p.id !== product.value.id).slice(0, 4)
-})
-
-function handleAddToCart() {
-  if (!product.value) return
-  cart.addToCart(product.value)
-  addedToCart.value = true
-  setTimeout(() => { addedToCart.value = false }, 2000)
-}
-</script>
 
 <style scoped>
 .product-page {

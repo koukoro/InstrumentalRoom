@@ -1,3 +1,52 @@
+<script setup>
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { useCartStore } from '@/stores/cart.js'
+import data from '@/data/products.json'
+
+const cart = useCartStore()
+const router = useRouter()
+
+const menuOpen = ref(false)
+const activeCategory = ref('')
+const searchQuery = ref('')
+const searchResults = ref([])
+const searchEmpty = ref(false)
+
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value
+  if (menuOpen.value && data.categories.length) {
+    activeCategory.value = data.categories[0].slug
+  }
+}
+function closeMenu() {
+  menuOpen.value = false
+}
+
+const activeSubs = computed(() => data.subcategories[activeCategory.value] || [])
+
+function onSearch() {
+  const q = searchQuery.value.trim().toLowerCase()
+  if (!q) { searchResults.value = []; searchEmpty.value = false; return }
+  const found = data.products.filter(p => p.name.toLowerCase().includes(q))
+  searchResults.value = found.slice(0, 6)
+  searchEmpty.value = found.length === 0
+}
+
+function goToProduct(p) {
+  searchQuery.value = ''
+  searchResults.value = []
+  searchEmpty.value = false
+  router.push(`/product/${p.slug}`)
+}
+function goToCatalog() {
+  searchQuery.value = ''
+  searchResults.value = []
+  searchEmpty.value = false
+  router.push('/catalog')
+}
+</script>
+
 <template>
   <header class="header">
     <div class="header__topbar">
@@ -155,55 +204,6 @@
 
   </header>
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
-import { useCartStore } from '@/stores/cart.js'
-import data from '@/data/products.json'
-
-const cart = useCartStore()
-const router = useRouter()
-
-const menuOpen = ref(false)
-const activeCategory = ref('')
-const searchQuery = ref('')
-const searchResults = ref([])
-const searchEmpty = ref(false)
-
-function toggleMenu() {
-  menuOpen.value = !menuOpen.value
-  if (menuOpen.value && data.categories.length) {
-    activeCategory.value = data.categories[0].slug
-  }
-}
-function closeMenu() {
-  menuOpen.value = false
-}
-
-const activeSubs = computed(() => data.subcategories[activeCategory.value] || [])
-
-function onSearch() {
-  const q = searchQuery.value.trim().toLowerCase()
-  if (!q) { searchResults.value = []; searchEmpty.value = false; return }
-  const found = data.products.filter(p => p.name.toLowerCase().includes(q))
-  searchResults.value = found.slice(0, 6)
-  searchEmpty.value = found.length === 0
-}
-
-function goToProduct(p) {
-  searchQuery.value = ''
-  searchResults.value = []
-  searchEmpty.value = false
-  router.push(`/product/${p.slug}`)
-}
-function goToCatalog() {
-  searchQuery.value = ''
-  searchResults.value = []
-  searchEmpty.value = false
-  router.push('/catalog')
-}
-</script>
 
 <style scoped>
 .header__topbar {

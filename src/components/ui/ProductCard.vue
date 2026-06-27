@@ -1,3 +1,23 @@
+<script setup>
+import { ref } from 'vue'
+import { useCartStore } from '@/stores/cart.js'
+
+const props = defineProps({
+  product: { type: Object, required: true }
+})
+
+const cart = useCartStore()
+const liked = ref(false)
+const addedToCart = ref(false)
+const imgError = ref(false)
+
+function handleAddToCart() {
+  cart.addToCart(props.product)
+  addedToCart.value = true
+  setTimeout(() => { addedToCart.value = false }, 2000)
+}
+</script>
+
 <template>
   <div class="product-card">
     <RouterLink :to="`/product/${product.slug}`" class="product-card__img-link">
@@ -87,26 +107,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { useCartStore } from '@/stores/cart.js'
-
-const props = defineProps({
-  product: { type: Object, required: true }
-})
-
-const cart = useCartStore()
-const liked = ref(false)
-const addedToCart = ref(false)
-const imgError = ref(false)
-
-function handleAddToCart() {
-  cart.addToCart(props.product)
-  addedToCart.value = true
-  setTimeout(() => { addedToCart.value = false }, 2000)
-}
-</script>
 
 <style scoped>
 .product-card {

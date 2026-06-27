@@ -1,3 +1,6 @@
+<script setup>
+</script>
+
 <template>
   <div class="about-page">
     <div class="container">
@@ -25,9 +28,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-</script>
 
 <style scoped>
 .about-page {

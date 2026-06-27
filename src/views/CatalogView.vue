@@ -1,3 +1,28 @@
+<script setup>
+import { ref, computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import data from '@/data/products.json'
+import CategoryCard from '@/components/ui/CategoryCard.vue'
+
+const route = useRoute()
+const currentPage = ref(3)
+const pageSize = ref(9)
+
+const activeCategory = ref(route.params.category || data.categories[0].slug)
+
+watch(() => route.params.category, (val) => {
+  if (val) activeCategory.value = val
+})
+
+const activeSubs = computed(() => data.subcategories[activeCategory.value] || [])
+const visibleSubs = computed(() => activeSubs.value.slice(0, pageSize.value))
+const hasMore = computed(() => activeSubs.value.length > pageSize.value)
+
+function showMore() {
+  pageSize.value += 9
+}
+</script>
+
 <template>
   <div class="catalog-page">
     <div class="container">
@@ -68,31 +93,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref, computed, watch } from 'vue'
-import { useRoute } from 'vue-router'
-import data from '@/data/products.json'
-import CategoryCard from '@/components/ui/CategoryCard.vue'
-
-const route = useRoute()
-const currentPage = ref(3)
-const pageSize = ref(9)
-
-const activeCategory = ref(route.params.category || data.categories[0].slug)
-
-watch(() => route.params.category, (val) => {
-  if (val) activeCategory.value = val
-})
-
-const activeSubs = computed(() => data.subcategories[activeCategory.value] || [])
-const visibleSubs = computed(() => activeSubs.value.slice(0, pageSize.value))
-const hasMore = computed(() => activeSubs.value.length > pageSize.value)
-
-function showMore() {
-  pageSize.value += 9
-}
-</script>
 
 <style scoped>
 .catalog-page {

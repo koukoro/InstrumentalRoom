@@ -1,3 +1,32 @@
+<script setup>
+import { ref, computed } from 'vue'
+import data from '@/data/products.json'
+import ProductSection from '@/components/home/ProductSection.vue'
+import ProductCard from '@/components/ui/ProductCard.vue'
+
+const brandsRef = ref(null)
+const newsRef = ref(null)
+const activeTab = ref('Новинки')
+
+function scrollBrands(dir) {
+  if (brandsRef.value) brandsRef.value.scrollBy({ left: dir * 200, behavior: 'smooth' })
+}
+function scrollNews(dir) {
+  if (newsRef.value) newsRef.value.scrollBy({ left: dir * 280, behavior: 'smooth' })
+}
+function nextSlide() {}
+
+const productGroups = computed(() => {
+  const cats = data.categories
+  return cats.map(cat => ({
+    title: cat.name,
+    products: data.products.filter(p => p.categoryId === cat.id)
+  })).filter(g => g.products.length > 0)
+})
+
+const featuredProducts = computed(() => data.products.slice(0, 8))
+</script>
+
 <template>
   <div class="home">
     <section class="hero">
@@ -162,35 +191,6 @@
     </section>
   </div>
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-import data from '@/data/products.json'
-import ProductSection from '@/components/home/ProductSection.vue'
-import ProductCard from '@/components/ui/ProductCard.vue'
-
-const brandsRef = ref(null)
-const newsRef = ref(null)
-const activeTab = ref('Новинки')
-
-function scrollBrands(dir) {
-  if (brandsRef.value) brandsRef.value.scrollBy({ left: dir * 200, behavior: 'smooth' })
-}
-function scrollNews(dir) {
-  if (newsRef.value) newsRef.value.scrollBy({ left: dir * 280, behavior: 'smooth' })
-}
-function nextSlide() {}
-
-const productGroups = computed(() => {
-  const cats = data.categories
-  return cats.map(cat => ({
-    title: cat.name,
-    products: data.products.filter(p => p.categoryId === cat.id)
-  })).filter(g => g.products.length > 0)
-})
-
-const featuredProducts = computed(() => data.products.slice(0, 8))
-</script>
 
 <style scoped>
 .hero {

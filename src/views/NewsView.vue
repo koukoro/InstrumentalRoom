@@ -1,3 +1,7 @@
+<script setup>
+import data from '@/data/products.json'
+</script>
+
 <template>
   <div class="news-page">
     <div class="container">
@@ -27,10 +31,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import data from '@/data/products.json'
-</script>
 
 <style scoped>
 .news-page {

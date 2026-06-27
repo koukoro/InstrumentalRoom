@@ -1,3 +1,15 @@
+<script setup>
+import { ref } from 'vue'
+
+defineProps({
+  name: { type: String, required: true },
+  image: { type: String, default: '' },
+  to: { type: String, required: true }
+})
+
+const imgError = ref(false)
+</script>
+
 <template>
   <RouterLink :to="to" class="category-card">
     <div class="category-card__img-wrap">
@@ -16,18 +28,6 @@
     </div>
   </RouterLink>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  name: { type: String, required: true },
-  image: { type: String, default: '' },
-  to: { type: String, required: true }
-})
-
-const imgError = ref(false)
-</script>
 
 <style scoped>
 .category-card {

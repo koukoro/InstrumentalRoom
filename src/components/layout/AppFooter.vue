@@ -1,3 +1,7 @@
+<script setup>
+import data from '@/data/products.json'
+</script>
+
 <template>
   <footer class="footer">
     <div class="container footer__inner">
@@ -36,10 +40,6 @@
     </div>
   </footer>
 </template>
-
-<script setup>
-import data from '@/data/products.json'
-</script>
 
 <style scoped>
 .footer {
