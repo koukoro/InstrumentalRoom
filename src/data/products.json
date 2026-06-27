@@ -1,0 +1,360 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "slug": "malyarnye",
+      "name": "Малярные товары",
+      "image": "//InstrumentalRoom/images/emal.png"
+    },
+    {
+      "id": 2,
+      "slug": "elektrooborudovanie",
+      "name": "Электрооборудование",
+      "image": "/InstrumentalRoom/images/screwdriver.png"
+    },
+    {
+      "id": 3,
+      "slug": "spetsodezhda",
+      "name": "Спецодежда",
+      "image": "/InstrumentalRoom/images/jacket.png"
+    },
+    {
+      "id": 4,
+      "slug": "sezonnoe",
+      "name": "Сезонное",
+      "image": "/InstrumentalRoom/images/damkrat.png"
+    },
+    {
+      "id": 5,
+      "slug": "dlya-doma",
+      "name": "Для дома и дачи",
+      "image": "/InstrumentalRoom/images/kusach.png"
+    },
+    {
+      "id": 6,
+      "slug": "instrument",
+      "name": "Инструменты",
+      "image": "/InstrumentalRoom/images/pistol.png"
+    }
+  ],
+  "subcategories": {
+    "dlya-doma": [
+      {
+        "id": 51,
+        "name": "Поливочный инвентарь",
+        "image": "/InstrumentalRoom/images/vils.png"
+      },
+      {
+        "id": 52,
+        "name": "Насосы",
+        "image": "/InstrumentalRoom/images/damkrat.png"
+      },
+      {
+        "id": 53,
+        "name": "Поликарбонат",
+        "image": "/InstrumentalRoom/images/casca.png"
+      },
+      {
+        "id": 54,
+        "name": "Садово-огородный инвентарь",
+        "image": "/InstrumentalRoom/images/kusach.png"
+      },
+      {
+        "id": 55,
+        "name": "Грунт",
+        "image": "/InstrumentalRoom/images/pistol.png"
+      },
+      {
+        "id": 56,
+        "name": "Сетка Рабица",
+        "image": "/InstrumentalRoom/images/vili.png"
+      },
+      {
+        "id": 57,
+        "name": "Летний душ",
+        "image": "/InstrumentalRoom/images/jacket.png"
+      },
+      {
+        "id": 58,
+        "name": "Умывальники, рукомойники",
+        "image": "/InstrumentalRoom/images/emal.png"
+      },
+      {
+        "id": 59,
+        "name": "Побелка",
+        "image": "/InstrumentalRoom/images/casca.png"
+      },
+      {
+        "id": 60,
+        "name": "Краска садовая",
+        "image": "/InstrumentalRoom/images/casca.png"
+      },
+      {
+        "id": 61,
+        "name": "Удобрения",
+        "image": "/InstrumentalRoom/images/damkrat.png"
+      },
+      {
+        "id": 62,
+        "name": "Печное литьё и аксессуары",
+        "image": "/InstrumentalRoom/images/vili.png"
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": 1,
+      "slug": "emal-condor-pf115-zheltaya",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 1,
+      "image": "/InstrumentalRoom/images/emal.png",
+      "description": "Торговое или промышленное предприятие, торгово-промышленное объединение предпринимателей, форма организации предприятия, при которой его правосубъектность отличается от правосубъектности лиц, в нём участвующих.",
+      "brand": "Condor",
+      "weight": "1,8 кг",
+      "article": "ПФ-115"
+    },
+    {
+      "id": 2,
+      "slug": "emal-condor-pf115-belaya",
+      "name": "Эмаль Condor ПФ-115 белая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": false,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 1,
+      "image": "/InstrumentalRoom/images/objekt.png",
+      "description": "Торговое или промышленное предприятие, торгово-промышленное объединение предпринимателей.",
+      "brand": "Condor",
+      "weight": "1,8 кг",
+      "article": "ПФ-115"
+    },
+    {
+      "id": 3,
+      "slug": "otvertka-elektrik",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 2,
+      "image": "/InstrumentalRoom/images/screwdriver.png",
+      "description": "Описание товара.",
+      "brand": "Truper",
+      "weight": "0,3 кг",
+      "article": "EL-100"
+    },
+    {
+      "id": 4,
+      "slug": "otvertka-krasnya",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": null,
+      "inStock": true,
+      "isNew": false,
+      "isSale": false,
+      "categoryId": 2,
+      "image": "/InstrumentalRoom/images/sverlo.png",
+      "description": "Описание товара.",
+      "brand": "Truper",
+      "weight": "0,3 кг",
+      "article": "EL-101"
+    },
+    {
+      "id": 5,
+      "slug": "kurtka-rabochaya",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": null,
+      "inStock": true,
+      "isNew": false,
+      "isSale": true,
+      "categoryId": 3,
+      "image": "/InstrumentalRoom/images/jacket.png",
+      "description": "Описание товара.",
+      "brand": "Kapro",
+      "weight": "0,8 кг",
+      "article": "WJ-200"
+    },
+    {
+      "id": 6,
+      "slug": "kaska-oranzhevaya",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 3,
+      "image": "/InstrumentalRoom/images/casca.png",
+      "description": "Описание товара.",
+      "brand": "Kapro",
+      "weight": "0,4 кг",
+      "article": "HC-300"
+    },
+    {
+      "id": 7,
+      "slug": "sekatory",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 4,
+      "image": "/InstrumentalRoom/images/kusach.png",
+      "description": "Описание товара.",
+      "brand": "Truper",
+      "weight": "0,5 кг",
+      "article": "SC-100"
+    },
+    {
+      "id": 8,
+      "slug": "vily-sadovye",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": null,
+      "inStock": true,
+      "isNew": false,
+      "isSale": false,
+      "categoryId": 4,
+      "image": "/InstrumentalRoom/images/vili.png",
+      "description": "Описание товара.",
+      "brand": "Truper",
+      "weight": "1,2 кг",
+      "article": "FK-200"
+    },
+    {
+      "id": 9,
+      "slug": "pistolet-pennyy",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 5,
+      "image": "/InstrumentalRoom/images/damkrat.png",
+      "description": "Описание товара.",
+      "brand": "Finland",
+      "weight": "0,6 кг",
+      "article": "GN-100"
+    },
+    {
+      "id": 10,
+      "slug": "kley-montazhny",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 5,
+      "image": "/InstrumentalRoom/images/shovel.png",
+      "description": "Описание товара.",
+      "brand": "Finland",
+      "weight": "0,9 кг",
+      "article": "GL-100"
+    },
+    {
+      "id": 11,
+      "slug": "kley2",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": 720,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 6,
+      "image": "/InstrumentalRoom/images/screwdriver.png",
+      "description": "Описание товара.",
+      "brand": "Finland",
+      "weight": "0,9 кг",
+      "article": "GL-101"
+    },
+    {
+      "id": 12,
+      "slug": "dlya-doma-1",
+      "name": "Эмаль Condor ПФ-115 жёлтая 1,8 кг",
+      "price": 500,
+      "oldPrice": null,
+      "inStock": true,
+      "isNew": true,
+      "isSale": false,
+      "categoryId": 6,
+      "image": "/InstrumentalRoom/images/pistol.png",
+      "description": "Описание товара.",
+      "brand": "Truper",
+      "weight": "1 кг",
+      "article": "HM-100"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Название новости",
+      "date": "12 января 2023",
+      "image": "//InstrumentalRoom/images/news1.jpg",
+      "text": "Торговое или промышленное предприятие, торгово-промышленное объединение предпринимателей, форма организации предприятия, при которой его правосубъектность отличается от правосубъектности лиц, в нём участвующих."
+    },
+    {
+      "id": 2,
+      "title": "Название новости",
+      "date": "12 января 2023",
+      "image": "//InstrumentalRoom/images/news2.jpg",
+      "text": "Торговое или промышленное предприятие."
+    },
+    {
+      "id": 3,
+      "title": "Название новости",
+      "date": "12 января 2023",
+      "image": "//InstrumentalRoom/images/news3.jpg",
+      "text": "Торговое или промышленное предприятие."
+    },
+    {
+      "id": 4,
+      "title": "Название новости",
+      "date": "12 января 2023",
+      "image": "//InstrumentalRoom/images/news4.jpg",
+      "text": "Торговое или промышленное предприятие."
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "Truper",
+      "logo": "/InstrumentalRoom/images/truper.png"
+    },
+    {
+      "id": 2,
+      "name": "Центро инструмент",
+      "logo": "/InstrumentalRoom/images/centro-inst.png"
+    },
+    {
+      "id": 3,
+      "name": "Finland",
+      "logo": "/InstrumentalRoom/images/finland.png"
+    },
+    {
+      "id": 4,
+      "name": "Kapro",
+      "logo": "/InstrumentalRoom/images/kapro.png"
+    },
+    {
+      "id": 5,
+      "name": "Truper",
+      "logo": "/InstrumentalRoom/images/truper.png"
+    },
+    {
+      "id": 6,
+      "name": "Центро инструмент",
+      "logo": "/InstrumentalRoom/images/centro-inst.png"
+    }
+  ]
+}
